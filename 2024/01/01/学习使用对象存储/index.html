@@ -9,7 +9,7 @@
     
     <title>
         
-            学习使用对象存储 |
+            使用对象存储来存储图片文件 |
         
         海底浪张的自留地
     </title>
@@ -187,7 +187,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        学习使用对象存储
+                        使用对象存储来存储图片文件
                     </div>
                 
 
@@ -221,12 +221,37 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Mon Jan 01 2024 22:28:19 GMT+0800">2024-01-01 22:28:19</span>
+                <span class="pc" data-updated="Mon Jan 01 2024 22:53:42 GMT+0800">2024-01-01 22:53:42</span>
             </span>
         
 
         
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E6%8A%80%E6%9C%AF%E5%AE%85%E6%8B%AF%E6%95%91%E4%B8%96%E7%95%8C/">技术宅拯救世界</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
 
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/">云服务</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
@@ -246,8 +271,15 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <p>测试</p>
-<p>测试图片<a class="link"   target="_blank" rel="noopener" href="https://vid-1253680165.cos.ap-guangzhou.myqcloud.com/IMG_7278.JPG?q-sign-algorithm=sha1&q-ak=AKIDT7lc_9CmePk_4QQL5i7U28wKzadrQ48r2Gd7uHVN0wuUJnbRZbA5cOcXAjOGKYLY&q-sign-time=1704119209;1704122809&q-key-time=1704119209;1704122809&q-header-list=host&q-url-param-list=ci-process&q-signature=972eece9ca4990df16616049cbebcc3ebaf93f40&x-cos-security-token=bRw4Vi0985pCljoWlPm7bvCPe6Rh9TTa101f79503e66f26aa1071b45a2a9ad0cDwO-KeSUd1-eWb5XYcxyvsvUeLwQ3sziMmhHGfsaCdeeiFSsyYe8xyiJfrJdGVmoDDI513ezdu2YGi6vP-NSDOJlxnlqJYdUBDfbNJH2p_OTgzEjqMWARI93R95SYOZ1XGhziBjkGCjlGsLl5tbKyzQTcbmWZRYIACCbFipS7I3GBap3IuUmnIVnnsueKUAb&ci-process=originImage" >绿幕原图测试<i class="fas fa-external-link-alt"></i></a></p>
+                    <h1 id="这是一个测试"><a href="#这是一个测试" class="headerlink" title="这是一个测试"></a>这是一个测试</h1><p>测试什么？用对象存储缩小git仓库的大小。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>这一次，尝试使用名为对象存储的服务，提供商是<a class="link"   target="_blank" rel="noopener" href="https://curl.qcloud.com/fO8ZRyqg" >腾讯云<i class="fas fa-external-link-alt"></i></a>，用于托管博客中使用的图片、音视频文件等。从而达到减小静态网页整个文件的体积。</p>
+<p>使用腾讯的服务也是从稳定和便捷中取了折衷，让博客写作不那么折腾。</p>
+<p>当然，未来也会折腾。但我们先跑起来。</p>
+<h2 id="先跑起来"><a href="#先跑起来" class="headerlink" title="先跑起来"></a>先跑起来</h2><p>测试图片是我第一次做直播时搭建的临时绿幕场景。图片大小4.7MBi。直接上传到存储桶里（storge bucket），然后用链接即可。</p>
+<p><img   src="https://vid-1253680165.cos.ap-guangzhou.myqcloud.com/IMG_7278.JPG"  alt="图测试"></p>
+<p>——————</p>
+<p>试试短链没有签名会怎么样。</p>
+<p><img   src="https://vid-1253680165.cos.ap-guangzhou.myqcloud.com/IMG_7278.JPG"  alt="图测试2"></p>
 
                 </div>
 
@@ -255,6 +287,22 @@
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/">云服务</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                                    </li>
+                                
+                            </ul>
                         
                     </div>
                     <div>
@@ -271,11 +319,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2024/01/01/about-me/"
-                                   title="about/me"
+                                   href="/2024/01/01/%E7%A8%8B%E5%BA%8F%E7%8E%A9%E5%85%B7%EF%BC%9A%E5%B0%8F%E7%8C%AB%E9%92%93%E9%B1%BC%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95%E7%9A%84python%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"
+                                   title="程序玩具：小猫钓鱼纸牌玩法的python模拟实现"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">about/me</span>
+                                        <span class="post-nav-title-item text-ellipsis">程序玩具：小猫钓鱼纸牌玩法的python模拟实现</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
