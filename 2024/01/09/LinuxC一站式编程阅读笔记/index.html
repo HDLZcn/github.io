@@ -221,7 +221,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Jan 10 2024 10:28:47 GMT+0800">2024-01-10 10:28:47</span>
+                <span class="pc" data-updated="Wed Jan 10 2024 15:28:33 GMT+0800">2024-01-10 15:28:33</span>
             </span>
         
 
@@ -258,7 +258,7 @@
 <ul>
 <li>printf中的第一个字符串称为格式化字符串（Format String），它规定了后面几个常量以何种格式插入到这个字符串中，在格式化字符串中%号（Percent Sign）后面加上字母c、d、f分别表示字符型、整型和浮点型的转换说明（Conversion Specification）</li>
 </ul>
-<p>*阅注 ：</p>
+<p>*阅注 ：%f 实际上是双精度浮点型 double类型，但是d已经分配给整型，所以只能用f</p>
 <table>
 <thead>
 <tr>
@@ -270,7 +270,7 @@
 <tbody><tr>
 <td>字符</td>
 <td>十进制整型</td>
-<td>浮点型</td>
+<td>双精度浮点型</td>
 </tr>
 <tr>
 <td>char</td>
@@ -278,6 +278,20 @@
 <td>float</td>
 </tr>
 </tbody></table>
+<ul>
+<li>虽然全局变量用起来很方便，但一定要慎用，能用函数传参代替的就不要用全局变量。</li>
+</ul>
+<p>*阅注 ： 深有体会，全局变量只用于比如公理常数、地理位置名称等等，为了省地方、省编码的场景。</p>
+<ul>
+<li><p>要注意一点：局部变量可以用类型相符的任意表达式来初始化，而全局变量只能用常量表达式（Constant Expression）初始化。例如，全局变量pi这样初始化是合法的：</p>
+<p>  double pi &#x3D; 3.14 + 0.0016; </p>
+<ul>
+<li><p>但这样初始化是不合法的：</p>
+<p>  double pi &#x3D; acos(-1.0);</p>
+</li>
+</ul>
+</li>
+</ul>
 
                 </div>
 
