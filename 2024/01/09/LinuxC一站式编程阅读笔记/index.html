@@ -221,7 +221,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Jan 10 2024 15:28:33 GMT+0800">2024-01-10 15:28:33</span>
+                <span class="pc" data-updated="Tue Jan 16 2024 11:34:52 GMT+0800">2024-01-16 11:34:52</span>
             </span>
         
 
@@ -291,7 +291,30 @@
 </li>
 </ul>
 </li>
+<li><p>在数学中a&lt;b&lt;c表示b既大于a又小于c，但作为C语言表达式却不是这样。以上几种运算符都是左结合的，请读者想一下这个表达式应如何求值。</p>
+</li>
 </ul>
+<p>*阅注：左结合的意思就是优先算操作符左边的值</p>
+<ul>
+<li><p>…也就是说，else到底是和if (A)配对还是和if (B)配对？很多编程语言的语法都有这个问题，称为Dangling-else问题。C语言规定，else总是和它上面最近的一个if配对</p>
+</li>
+<li><p>变量result在这个循环中的作用是累加器（Accumulator），把每次循环的中间结果累积起来，循环结束后得到的累积值就是最终结果，由于这个例子是用乘法来累积的，所以result的初值是1，如果用加法累积则result的初值应该是0。</p>
+</li>
+</ul>
+<p>*阅注: while累加器的初始值选择，依赖于使用的是乘法还是加法</p>
+<ul>
+<li>看图 5.2 “factorial(3)的调用过程”，在整个递归调用过程中，虽然分配和释放了很多变量，但所有变量都只在初始化时赋值，没有任何变量的值发生过改变，而上面的循环程序则通过对n和result这两个变量多次赋值来达到同样的目的。前一种思路称为函数式编程（Functional Programming），而后一种思路称为命令式编程（Imperative Programming），这个区别类似于第 1 节 “程序和编程语言”讲的Declarative和Imperative的区别。…用C语言编程主要还是采用Imperative的模式，但要记住，给变量多次赋值时要格外小心，在代码中多次读写同一变量应该以一种一致的方式进行。所谓“一致的方式”是说应该有一套统一的规则，规定在一段代码中哪里会对某个变量赋值、哪里会读取它的值，比如在第 2.4 节 “errno与perror函数”会讲到访问errno的规则。</li>
+</ul>
+<p>*阅注： 函数式编程（Functional Programming）的思路是变量赋值一次，直至释放。命令式编程（Imperative Programming）的思路是多次使用同一个变量，给他赋不同的值。</p>
+<ul>
+<li>while语句先测试控制表达式的值再执行循环体，而do&#x2F;while语句先执行循环体再测试控制表达式的值。如果控制表达式的值一开始就是假，while语句的循环体一次都不执行，而do&#x2F;while语句的循环体仍然要执行一次再跳出循环。</li>
+</ul>
+<p>*阅注： 先跑起来再说。do&#x2F;while</p>
+<ul>
+<li>其中++i这个表达式相当于i &#x3D; i + 1[9]，++称为前缀自增运算符（Prefix Increment Operator），类似地，–称为前缀自减运算符（Prefix Decrement Operator）[10]，–i相当于i &#x3D; i - 1。如果把++i这个表达式看作一个函数调用，除了传入一个参数返回一个值（等于参数值加1）之外，还产生一个Side Effect，就是把变量i的值增加了1。</li>
+</ul>
+<p>**–i返回减1之后的值，而i–返回减1之前的值，但这两个表达式都产生同样的Side Effect，就是把变量i的值减了1。</p>
+<p>*阅注： 返回值看操作符，操作符是side effect</p>
 
                 </div>
 
@@ -421,43 +444,131 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        <div class="side-tools-container border-box ">
-    <ul class="side-tools-list side-tools-show-handle border-box">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
+        $tools-item-width = 2.2rem
+$tools-item-font-size = 1.1rem
+$tools-item-border-radius = 0.2rem
 
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
+.side-tools-show-handle {
+  transform translateX(100%)
+  opacity 0
+  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
 
-        <li class="tools-item tool-toggle-theme-mode flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
+  &.show {
+    transform translateX(0)
+    opacity 1
+  }
+}
 
-        <!-- rss -->
-        
+.side-tools-container {
+  .tools-item {
+    width $tools-item-width
+    height $tools-item-width
+    margin-bottom 0.25rem
+    color var(--text-color-3)
+    font-size $tools-item-font-size
+    background var(--background-color-1)
+    border-right none
+    border-radius $tools-item-border-radius
+    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
+    cursor pointer
 
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
+    i {
+      color var(--text-color-3)
+    }
 
-    <ul class="exposed-tools-list border-box">
-        
+    &:hover {
+      color var(--background-color-1)
+      background var(--primary-color)
+      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
 
-        
+      i {
+        color var(--background-color-1)
+      }
+    }
 
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
 
-        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
-            <i class="arrow fas fa-arrow-up"></i>
-            <span class="percent"></span>
-        </li>
-    </ul>
-</div>
+    +keep-tablet() {
+      width $tools-item-width * 0.9
+      height $tools-item-width * 0.9
+      font-size $tools-item-font-size * 0.9
+
+      &.toggle-show-toc-tablet
+      &.go-to-comments-tablet {
+        display flex !important
+      }
+    }
+
+    &.rss {
+
+      a {
+        width 100%
+        height 100%
+        border-radius $tools-item-border-radius
+
+        &:hover {
+          color var(--background-color-1)
+          background var(--primary-color)
+          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+        }
+      }
+    }
+
+    &.toggle-show-toc-tablet
+    &.go-to-comments-tablet {
+      display none
+    }
+  }
+
+
+  .exposed-tools-list {
+
+    .tool-scroll-to-top {
+      display none
+
+      &.show {
+        display flex
+      }
+
+
+      &.show-arrow {
+        .percent {
+          display none
+        }
+
+        .arrow {
+          display flex
+        }
+      }
+
+
+      &.show-percent {
+        .percent {
+          display flex
+        }
+
+        .arrow {
+          display none
+        }
+      }
+
+
+      &:hover {
+        .percent {
+          display none
+        }
+
+        .arrow {
+          display flex
+        }
+      }
+
+
+      .percent {
+        font-size 1rem
+      }
+    }
+  }
+}
 
     </div>
 
