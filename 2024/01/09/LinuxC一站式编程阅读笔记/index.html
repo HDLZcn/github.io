@@ -221,7 +221,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sat Jan 20 2024 18:51:29 GMT+0800">2024-01-20 18:51:29</span>
+                <span class="pc" data-updated="Sat Jan 20 2024 19:27:59 GMT+0800">2024-01-20 19:27:59</span>
             </span>
         
 
@@ -320,6 +320,30 @@
 </ul>
 <p><strong>阅注</strong>： break打破规则，continue打破地不是很彻底。</p>
 <ul>
+<li>注意的是，定义变量时可以把相同类型的变量列在一起，而定义参数却不可以，例如下面这样的定义是错的：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void print_time(int hour, minute)</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;%d:%d\n&quot;, hour, minute);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>阅注</strong>： 我想原因参数必须要精准地让编译器了解需要预分配的内存，而不是隐式地声明，用的时候才发现不够？</p>
+<ul>
+<li><p>习题：3. 形参和实参</p>
+<ul>
+<li><p>1.定义一个函数increment，它的作用是……</p>
+</li>
+<li><p>A1：试过了，increment没有返回值，它修改的是increment局部的参数x，添加了返回值就会如预期工作。</p>
+</li>
+<li><ol start="2">
+<li>如果在一个程序中调用了printf函数却不包含头文……</li>
+</ol>
+</li>
+<li><p>A2：不包含printf函数在stdio.h中</p>
+</li>
+</ul>
+</li>
+<li><p>习题：2. if&#x2F;else语句 of	第 4 章 分支语句</p>
+<ul>
+<li>解答：十位就是100取余再对10取除法，个位就是取十位的余  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    void print_decade_and_unit(int x)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">        printf(&quot;decade of x is %d&quot;,x%100/10);</span><br><span class="line">        printf(&quot;unit of x is %d&quot;,x%10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
 <li><p>【练习代码发现的问题】</p>
 <ul>
 <li>网站部署报错：Failed to connect to github.com port 22: Timed out</li>
