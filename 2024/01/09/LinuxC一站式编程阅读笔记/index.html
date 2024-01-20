@@ -221,7 +221,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Jan 17 2024 10:08:38 GMT+0800">2024-01-17 10:08:38</span>
+                <span class="pc" data-updated="Sat Jan 20 2024 18:31:28 GMT+0800">2024-01-20 18:31:28</span>
             </span>
         
 
@@ -320,9 +320,15 @@
 </ul>
 <p><strong>阅注</strong>： break打破规则，continue打破地不是很彻底。</p>
 <ul>
-<li>网站部署报错：Failed to connect to github.com port 22: Timed out</li>
+<li>【练习代码发现的问题】网站部署报错：Failed to connect to github.com port 22: Timed out</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.ssh/config</span><br><span class="line"># Add section below to it</span><br><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  Port 443</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>【练习代码发现的问题 之 Vim】</li>
+</ul>
+<p>– VIM使用宏 👉 @c<br>– VIM不退出界面的情况下使用编译命令, -o 指定输出文件名, -lm 使用扩展库libm.so 👉 :!gcc &lt;xxx.c&gt; -o output.out -lm</p>
+
                 </div>
 
                 
