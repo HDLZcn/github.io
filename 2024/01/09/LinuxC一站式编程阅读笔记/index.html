@@ -221,7 +221,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sat Jan 20 2024 18:31:28 GMT+0800">2024-01-20 18:31:28</span>
+                <span class="pc" data-updated="Sat Jan 20 2024 18:50:00 GMT+0800">2024-01-20 18:50:00</span>
             </span>
         
 
@@ -320,14 +320,22 @@
 </ul>
 <p><strong>阅注</strong>： break打破规则，continue打破地不是很彻底。</p>
 <ul>
-<li>【练习代码发现的问题】网站部署报错：Failed to connect to github.com port 22: Timed out</li>
+<li><p>【练习代码发现的问题】</p>
+<p>  -网站部署报错：Failed to connect to github.com port 22: Timed out</p>
+</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.ssh/config</span><br><span class="line"># Add section below to it</span><br><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  Port 443</span><br></pre></td></tr></table></figure>
-
+<pre><code>-定义函数时，如果不需要返回值，需要定义为**void** func_name(…)&#123;…&#125;
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void print_time(int hour,int minute)</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;%d and %d hours\n&quot;,hour,minute/60);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>【练习代码发现的问题 之 Vim】</li>
+<li><p>【练习代码发现的问题 之 Vim】</p>
+<ul>
+<li>VIM使用宏 👉 @c</li>
+<li>VIM不退出界面的情况下使用编译命令, -o 指定输出文件名, -lm 使用扩展库libm.so 👉 :!gcc &lt;xxx.c&gt; -o output.out -lm</li>
 </ul>
-<p>– VIM使用宏 👉 @c<br>– VIM不退出界面的情况下使用编译命令, -o 指定输出文件名, -lm 使用扩展库libm.so 👉 :!gcc &lt;xxx.c&gt; -o output.out -lm</p>
+</li>
+</ul>
 
                 </div>
 
