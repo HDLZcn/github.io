@@ -9,7 +9,7 @@
     
     <title>
         
-            读书笔记：Show-Your-WorkVol.02@24 |
+            用Kaggle学Pandas数据分析 |
         
         海底浪张的自留地
     </title>
@@ -187,7 +187,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        读书笔记：Show-Your-WorkVol.02@24
+                        用Kaggle学Pandas数据分析
                     </div>
                 
 
@@ -215,13 +215,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2024-01-12 11:54:22</span>
-                <span class="mobile">2024-01-12 11:54</span>
+                <span class="pc">2024-04-01 21:34:56</span>
+                <span class="mobile">2024-04-01 21:34</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Fri Jan 12 2024 11:54:22 GMT+0800">2024-01-12 11:54:22</span>
+                <span class="pc" data-updated="Mon Apr 01 2024 21:39:05 GMT+0800">2024-04-01 21:39:05</span>
             </span>
         
 
@@ -246,7 +246,82 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    
+                    <p>前言：Pandas 总是查了一点点文档就用在工作里，几乎没有系统学过。刚好Kaggle有这么个教学，一边联系一边记录吧。</p>
+<h1 id="Create-a-new-DataFrame"><a href="#Create-a-new-DataFrame" class="headerlink" title="Create a new DataFrame"></a>Create a new DataFrame</h1><h2 id="standard-usage"><a href="#standard-usage" class="headerlink" title="standard usage"></a>standard usage</h2><p>pd.DataFrame({‘Yes’: [50, 21], ‘No’: [131, 2]})</p>
+<ul>
+<li>with index parameter,pd.Series also have index parameter.</li>
+</ul>
+<p>pd.DataFrame({‘Bob’: [‘I liked it.’, ‘It was awful.’],<br>              ‘Sue’: [‘Pretty good.’, ‘Bland.’]},<br>             index&#x3D;[‘Product A’, ‘Product B’])</p>
+<p>pd.Series([30, 35, 40], index&#x3D;[‘2015 Sales’, ‘2016 Sales’, ‘2017 Sales’], name&#x3D;’Product A’)</p>
+<ul>
+<li>use shape to check&#x2F;summary the DF’s weigth and heigth:</li>
+</ul>
+<p>df.shape</p>
+<h2 id="read-DataFrames"><a href="#read-DataFrames" class="headerlink" title="read DataFrames:"></a>read DataFrames:</h2><ul>
+<li>read a col (example as a book ) by col’s name</li>
+</ul>
+<p>useage1:</p>
+<p>books.title</p>
+<p>books.author</p>
+<p>etc…</p>
+<p>usage2:</p>
+<p>book[‘title’]</p>
+<p>books[[‘title’,’author’]]</p>
+<ul>
+<li>read by idx of rows and cols (rows first and cols second)</li>
+</ul>
+<p>df.iloc[rows range,cols range],e.g.:</p>
+<p>books.iloc[4] #use for read row4 of books DataFrame</p>
+<p>books.iloc[:,4] #use for read entire</p>
+<p>df.iloc[[1,2,-12],8] # select by index at from head count the  1\2\rows,and from bottom count the 12 row</p>
+<ul>
+<li>read by label of row index and col lebels:</li>
+</ul>
+<p>reviews.loc[0, ‘country’]</p>
+<p>reviews.loc[:, [‘taster_name’, ‘taster_twitter_handle’, ‘points’]]</p>
+<ul>
+<li>iloc and loc</li>
+</ul>
+<p>iloc:number,loc:label</p>
+<p>iloc: [), loc:[]</p>
+<h1 id="operation-of-dataframes"><a href="#operation-of-dataframes" class="headerlink" title="operation of dataframes"></a>operation of dataframes</h1><ul>
+<li>selection by conditions</li>
+</ul>
+<p>return a boolean series e.g.:</p>
+<p>reviews.country &#x3D;&#x3D; ‘Italy’</p>
+<p>input this series to .loc[], can see instantantly the selected table</p>
+<p>reviews.loc[(reviews.country &#x3D;&#x3D; ‘Italy’) &amp; (reviews.points &gt;&#x3D; 90)]</p>
+<ul>
+<li>conditional selectors</li>
+</ul>
+<p>mutiple conditions can use | or &amp; to build complex selectional conditions</p>
+<p>isin: reviews.loc[reviews.country.isin([‘Italy’, ‘France’])]</p>
+<p>isnull&#x2F;isnotnull: reviews.loc[reviews.price.notnull()]</p>
+<ul>
+<li>creat a new col</li>
+</ul>
+<p>reviews[‘index_backwards’] &#x3D; range(len(reviews), 0, -1)</p>
+<h1 id="summary-function-and-maps"><a href="#summary-function-and-maps" class="headerlink" title="summary function and maps"></a>summary function and maps</h1><ul>
+<li>summary functions :</li>
+</ul>
+<p>reviews.points.describe()#count\mean\max…for number col,count\unique\top for string col</p>
+<p>reviews.points.mean()</p>
+<p>reviews.taster_name.unique()</p>
+<p>reviews.taster_name.value_counts()</p>
+<ul>
+<li>maps （映射）:return a new object,instead of change origin col&#x2F;row</li>
+</ul>
+<p>map:</p>
+<p>二值化、归一化……</p>
+<p>apply:</p>
+<p>call a custom method on each row</p>
+<p>.apply(CUSTOM METHOD,AXIS)</p>
+<p>AXIS: columns\rows</p>
+<h1 id="Group-and-sort"><a href="#Group-and-sort" class="headerlink" title="Group and sort"></a>Group and sort</h1><p>- </p>
+<p>links：</p>
+<p>Pandas Cheat Sheet ：<a class="link"   target="_blank" rel="noopener" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" >https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf<i class="fas fa-external-link-alt"></i></a></p>
+<p>Kaggle: Solve short hands-on challenges to perfect your data manipulation skills.：<a class="link"   target="_blank" rel="noopener" href="https://www.kaggle.com/learn/pandas" >https://www.kaggle.com/learn/pandas<i class="fas fa-external-link-alt"></i></a></p>
+
                 </div>
 
                 
@@ -265,31 +340,15 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2024/02/10/flask-web-note-Make-a-order-sys/"
-                                   title="flask_web_note:Make_a_order_sys"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">flask_web_note:Make_a_order_sys</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2024/01/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%BD%AA%E4%B8%8E%E7%BD%9AVol-03-24/"
-                                   title="读书笔记：罪与罚Vol.03@24"
+                                   href="/2024/02/10/flask-web-note-Make-a-order-sys/"
+                                   title="flask_web_note:Make_a_order_sys"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">读书笔记：罪与罚Vol.03@24</span>
+                                        <span class="post-nav-title-item text-ellipsis">flask_web_note:Make_a_order_sys</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
